@@ -8,8 +8,8 @@ function Pipe() {
   this.blink = false;
   
   this.hits = function(Bird){
-  	if(Bird.x>this.x && Bird.x<this.x+this.w){
-    	if(Bird.y<this.t || Bird.y>this.t+this.gap){
+  	if(Bird.x+Bird.birdSize>this.x && Bird.x<this.x+this.w){
+    	if(Bird.y<this.t || (Bird.y+Bird.birdSize)>(this.t+this.gap)){
       	this.blink = true;
         return true;
       }

@@ -9,6 +9,7 @@ function Bird() {
   
   this.show = function() {
   	fill(255);
+    ellipseMode(CORNER);
     ellipse(this.x,this.y,this.birdSize,this.birdSize);
   }
   
@@ -17,8 +18,8 @@ function Bird() {
     this.velocity *= 0.95;
     this.y += this.velocity;
     
-    if(this.y > height){
-    	this.y = height;
+    if(this.y+this.birdSize> height){
+    	this.y = height-this.birdSize;
       this.velocity = 0;
     }
     else if(this.y < 0){
